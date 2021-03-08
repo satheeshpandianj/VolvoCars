@@ -1,5 +1,5 @@
 # VolvoCars
-This is related to Volvo Cars CRUD REST application assignment developed using Node JS for performance engineer position
+This is related to performance testing approach on Volvo Cars CRUD REST application developed using Node JS
 
 # Pre-requisites:
 The application files can be cloned from the git repository located at 
@@ -13,8 +13,8 @@ The following components/softwares need to be installed to run the application i
 
 The following softwares need to be installed to run the performance testing and visualize the performance metrics during the test.
 1. K6 - Performance testing tool
-2. Influx DB
-3. Grafana
+2. Influx DB - To store the performance metrics
+3. Grafana - To visualize the performance metrics
 
 # Instruction to install the pre-requisite softwares/components (for macOS)
 
@@ -53,25 +53,24 @@ brew install k6
 
 # Start service and validate the installation (for macOS)
 **1. InfluxDB**
-* Navigate the influxdb installation folder and execute influxdb manually. This will start the influxDB service and running in port 8086.
-* Open the browser and enter the URL "http://localhost:8086" and see the influxDB screen
+* Navigate to the influxdb installation folder and execute influxdb manually. This will start the influxDB service and will be running in port 8086.
+* Open the browser and enter the URL "http://localhost:8086" and see the influxDB screen.
 
 **2. Create Datasource in InfluxDB**
-* Login into influxDB (Create credential first and then login). 
-* Create the datasource with influxDB
+* Login into influxDB (Create credentials first and then login). 
+* Create the datasource with influxDB.
 
 **3. Grafana**
-* Execute the command ** brew service start grafana** in the terminal and start the service. Grafana will run the port 3000 by default
-* Open the browser and enter the URL "http://localhost:3000" and see the grafana screen
+* Execute the command ** brew service start grafana** in the terminal to start the service. Grafana will run in the port 3000 by default.
+* Open the browser and enter the URL "http://localhost:3000" and see the grafana screen.
 
 **4. Map Grafana with datasource (from InfluxDB)**
-* Login into Grafana (admin/admin as credential). 
+* Login into Grafana (admin/admin as credentials). 
 * Verify the datasource connection.
 
-**5. Create performance testing script using K6**
-* Create the test scripts for GET, POST, PUT and DELETE REST API calls for Volvo Cars CRUD REST application
 
 # Execute Performance Testing using K6
+* Create the test scripts for GET, POST, PUT and DELETE REST API calls for Volvo Cars CRUD REST application
 * Navigate to the folder where all the scripts are available in the terminal
 * Execute the command K6 run --out=influxdb=http://localhost:8086/volvocars scenario.js
     * scenario.js is nothing but the script name
