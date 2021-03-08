@@ -90,3 +90,5 @@ brew install k6
     * docker-compose run -v [ScriptPath]:/scripts k6 run [ScriptPath]/script.js
       * The above command will start the test in docker and send the metrics to InfluxDB and Grafana will load the metrics visually.
 
+# NOTE :
+Refer the doc folders for detailed steps for each tasks.
