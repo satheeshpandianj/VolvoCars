@@ -30,6 +30,8 @@ npm install Joi
 **Install Nodemon** :
 npm install nodemon -g
 
+# Task No 1: 
+
 # Run Node JS application in local machine
 * Clone the GIT repo to the local machine.
      * This repo has two files
@@ -70,10 +72,21 @@ brew install k6
 
 
 # Execute Performance Testing using K6
-* Create the test scripts for GET, POST, PUT and DELETE REST API calls for Volvo Cars CRUD REST application
+# Task No 2: 
+* Create the test scripts for GET, POST, PUT and DELETE REST API calls for Volvo Cars CRUD REST application. Refer scripts folder for scripts 
+
+# Task No 3a: This test executes in local machine
 * Navigate to the folder where all the scripts are available in the terminal
 * Execute the command K6 run --out=influxdb=http://localhost:8086/volvocars scenario.js
     * scenario.js is nothing but the script name
     * volvocars is the database name (It will be automatically created while running the test)     
 
+# Task No 3b: This test executes in docker
+* Docker needs to be installed to run the test in docker. Docker.img can be found here [https://docs.docker.com/docker-for-mac/install/]
+* Navigate to the folder where docker-compose.yml file is available in the terminal
+* Execute the docker commands
+    * docker-compose up -d influxdb grafana
+      * The above command pull the docker images for influxDB and grafana and run them in detached mode
+    * docker-compose run -v [ScriptPath]:/scripts k6 run [ScriptPath]/script.js
+      * The above command will start the test in docker and send the metrics to InfluxDB and Grafana will load the metrics visually.
 
