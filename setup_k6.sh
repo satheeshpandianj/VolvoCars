@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+#set -ex
 
-brew update
+#brew update
 brew install k6
