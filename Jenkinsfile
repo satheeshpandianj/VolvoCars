@@ -7,7 +7,7 @@ pipeline {
                 'chmod +x setup_k6.sh'
                 './setup_k6.sh'
                 echo 'Running K6 performance tests...'
-                k6 run scripts/WorkloadMixScript.js
+                'k6 run scripts/WorkloadMixScript.js'
             }
         }
     }
