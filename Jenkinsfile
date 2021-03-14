@@ -4,7 +4,7 @@ pipeline {
         stage('Performance Testing') {
             steps {
                 echo 'Running K6 performance tests...'
-                k6 run scripts/WorkloadMixScript.js
+                sh 'k6 run scripts/WorkloadMixScript.js'
             }
         }
     }
